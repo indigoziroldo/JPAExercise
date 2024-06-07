@@ -59,8 +59,6 @@ CREATE TABLE xhurrasco
     CONSTRAINT anfitriao_churrasco FOREIGN KEY(anfitriao) REFERENCES pessoa(id)
 );
 
-
-
 CREATE TABLE pessoa_alimento_xhurrasco
 (
     id_pessoa INTEGER,

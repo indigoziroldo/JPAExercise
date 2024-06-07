@@ -7,7 +7,7 @@ enums:
     confirmado
 package:
     local
-        (one to one - churrasco)
+        (one to many[dependendo do horário] - churrasco)
         classes e interface
     tipoalimento
         classes e interfaces
@@ -18,7 +18,7 @@ package:
         (many to many - alimento e churrasco)
         classes e interfaces
     churrasco
-        (one to one - local)
+        (many to one [dependendo do horário] - local)
         (many to many - alimento e pessoa)
         classes e interfaces
 		
