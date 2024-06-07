@@ -8,6 +8,7 @@ import java.util.UUID;
 
 @Data
 @Entity
+@Table(name = "comes_e_bebes")
 public class Alimento {
 
     @Id
@@ -15,20 +16,20 @@ public class Alimento {
     private UUID id;
 
     //    descricao VARCHAR(50),
-    @Column(length = 50)
+    @Column(length = 50, nullable = false)
     private String descricao;
 
     //    valor DECIMAL(7,2),
-    @Column(scale = 7, precision = 2)
+    @Column(scale = 7, precision = 2, nullable = false)
     private BigDecimal valor;
 
     //    quantidade INTEGER,
-    @Column
+    @Column (nullable = false)
     private Integer quantidade;
 
     //    id_tipo_alimento INTEGER,
-    @Column(name = id_tipo_alimento)
-    private long
+    @Column(name = "id_tipo_alimento", nullable = false)
+    private long tipoAlimento;
 
 
 }
