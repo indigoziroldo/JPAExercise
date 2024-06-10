@@ -16,7 +16,7 @@ public class Pessoa {
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         @Setter(AccessLevel.NONE)
-        private Integer id;
+        private long id;
 
         // nome VARCHAR(50),
         @Column(length = 50, nullable = false)

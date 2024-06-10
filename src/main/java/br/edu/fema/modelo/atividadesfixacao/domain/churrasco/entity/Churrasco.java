@@ -17,7 +17,7 @@ public class Churrasco {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Setter(AccessLevel.NONE)
-    private Integer id;
+    private long id;
 
     @Column (nullable = false)
     private LocalDateTime dataInicio;

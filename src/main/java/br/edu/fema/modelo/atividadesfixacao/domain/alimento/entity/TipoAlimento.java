@@ -14,7 +14,7 @@ public class TipoAlimento {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Setter(AccessLevel.NONE)
-    private Integer id; // ta long no Repository
+    private long id; // ta long no Repository
 
     @Column(length = 20, nullable = false)
     private String descricao;
