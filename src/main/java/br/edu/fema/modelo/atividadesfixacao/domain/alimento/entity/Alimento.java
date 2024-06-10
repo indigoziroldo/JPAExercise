@@ -1,9 +1,12 @@
-package br.edu.fema.modelo.atividadesfixacao.domain.entity;
+package br.edu.fema.modelo.atividadesfixacao.domain.alimento.entity;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.Set;
 import java.util.UUID;
 
 @Data
@@ -13,6 +16,7 @@ public class Alimento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Setter(AccessLevel.NONE)
     private UUID id;
 
     //    descricao VARCHAR(50),
@@ -30,6 +34,7 @@ public class Alimento {
     //    id_tipo_alimento INTEGER,
     @Column(name = "id_tipo_alimento", nullable = false)
     private long tipoAlimento;
+
 
 
 }

@@ -1,4 +1,4 @@
-package br.edu.fema.modelo.atividadesfixacao.domain.enums;
+package br.edu.fema.modelo.atividadesfixacao.domain.local.enums;
 
 import lombok.Getter;
 

@@ -1,11 +1,13 @@
-package br.edu.fema.modelo.atividadesfixacao.domain.entity;
+package br.edu.fema.modelo.atividadesfixacao.domain.local.entity;
 
-import br.edu.fema.modelo.atividadesfixacao.domain.enums.Locomocao;
-import br.edu.fema.modelo.atividadesfixacao.domain.enums.Situacao;
+import br.edu.fema.modelo.atividadesfixacao.domain.churrasco.entity.Churrasco;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.Set;
 import java.util.UUID;
 
 @Data
@@ -17,23 +19,27 @@ public class Local {
     // ID
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Setter(AccessLevel.NONE)
     private UUID id;
 
     //    vagas_estacionamento INTEGER,
-    @Column(name = "vagas_estacionamento")
+    @Column(name = "vagas_estacionamento", nullable = false)
     private int vagasEstacionamento;
 
     //    limite_de_pessoas INTEGER,
-    @Column(name = "limite_de_pessoas")
+    @Column(name = "limite_de_pessoas", nullable = false)
     private int limiteDePessoas;
 
     //    valor DECIMAL(5,2),
     @Column(scale = 5, precision = 2)
     private BigDecimal valor; // pode ser null
 
-    // embbeded
     @Embedded
     private Endereco endereco;
+
+    @OneToMany(mappedBy="local")
+    private Set<Churrasco> churrascos;
+
 
 }
 
