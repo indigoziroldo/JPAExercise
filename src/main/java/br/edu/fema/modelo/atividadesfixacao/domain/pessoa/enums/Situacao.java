@@ -4,7 +4,7 @@ import lombok.Getter;
 
 public enum Situacao {
 
-    @Getter
+    //@Getter
 
     CONFIRMADO,
     ESPERA,

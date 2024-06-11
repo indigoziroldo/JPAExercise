@@ -6,6 +6,8 @@ import br.edu.fema.modelo.atividadesfixacao.domain.local.enums.Locomocao;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Optional;
+
 @Getter
 @Setter @NoArgsConstructor
 @AllArgsConstructor
