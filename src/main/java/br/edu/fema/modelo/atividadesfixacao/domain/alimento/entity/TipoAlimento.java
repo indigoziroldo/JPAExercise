@@ -2,20 +2,25 @@ package br.edu.fema.modelo.atividadesfixacao.domain.alimento.entity;
 
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.Setter;
+import lombok.*;
 
-@Data
+@Getter
+@Setter @NoArgsConstructor
+@AllArgsConstructor
+
 @Entity
 @Table(name = "tipo_comes_e_bebes")
 public class TipoAlimento {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
     private long id; // ta long no Repository
 
-    @Column(length = 20, nullable = false)
+    @Column
     private String descricao;
+
+    @ManyToOne
+    @JoinColumn(name = "id_alimento")
+    private Alimento alimento;
 }

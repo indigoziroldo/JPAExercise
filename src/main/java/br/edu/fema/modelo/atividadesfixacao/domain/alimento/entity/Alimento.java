@@ -1,15 +1,17 @@
 package br.edu.fema.modelo.atividadesfixacao.domain.alimento.entity;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
-import java.util.Set;
+import java.util.List;
 import java.util.UUID;
 
-@Data
+
+@Getter
+@Setter @NoArgsConstructor
+@AllArgsConstructor
+
 @Entity
 @Table(name = "comes_e_bebes")
 public class Alimento {
@@ -20,22 +22,15 @@ public class Alimento {
     private UUID id;
 
     //    descricao VARCHAR(50),
-    @Column(length = 50, nullable = false)
+    @Column
     private String descricao;
 
     //    valor DECIMAL(7,2),
-    @Column(scale = 7, precision = 2, nullable = false)
+    @Column
     private BigDecimal valor;
 
-    //    quantidade INTEGER,
-    @Column (nullable = false)
-    private Integer quantidade;
-
-    //    id_tipo_alimento INTEGER,
-    @Column(name = "id_tipo_alimento", nullable = false)
-    private long tipoAlimento;
-
-
+    @OneToMany(mappedBy = "comes_e_bebes")
+    private List<TipoAlimento> tipoAlimento;
 
 }
 

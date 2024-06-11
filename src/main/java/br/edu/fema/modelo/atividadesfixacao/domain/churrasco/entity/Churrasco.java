@@ -3,37 +3,37 @@ package br.edu.fema.modelo.atividadesfixacao.domain.churrasco.entity;
 import br.edu.fema.modelo.atividadesfixacao.domain.local.entity.Local;
 import br.edu.fema.modelo.atividadesfixacao.domain.pessoa.entity.Pessoa;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
-@Data
+@Getter
+@Setter @NoArgsConstructor
+@AllArgsConstructor
+
 @Entity
+@Table(name = "xhurrasco")
 public class Churrasco {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
     private long id;
 
-    @Column (nullable = false)
+    @Column
     private LocalDateTime dataInicio;
 
-    @Column (nullable = false)
+    @Column
     private LocalDateTime dataFim;
 
-    @Column(name = "id_local", nullable = false)
-    private UUID idLocal;
+    @OneToMany(mappedBy = "local")
+    private List<Local> local = new ArrayList<>();
 
-    @Column (nullable = false)
-    private Pessoa anfitriao; // msm esquema de cima
-
-    @ManyToOne
-    @JoinColumn (name = "id_local", insertable = false, updatable = false)
-    private Local local;
-
+    @OneToOne
+    @JoinColumn(name = "id_pessoa")
+    private Pessoa anfitriao;
 
 }

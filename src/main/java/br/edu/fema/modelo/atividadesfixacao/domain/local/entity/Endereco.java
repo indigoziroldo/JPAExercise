@@ -16,28 +16,28 @@ import lombok.NoArgsConstructor;
 public class Endereco {
 
     //    rua VARCHAR(40),
-    @Column(length = 40, nullable = false)
+    @Column
     private String rua;
 
     //    numero VARCHAR(10),
-    @Column(length = 10, nullable = false)
+    @Column
     private String numero;
 
     //    cep VARCHAR(9),
-    @Column(length = 9, nullable = false)
+    @Column
     private String cep;
 
     //    cidade VARCHAR(30),
-    @Column(length = 30, nullable = false)
+    @Column
     private String cidade;
 
     //    estado VARCHAR(30),
-    @Column(length = 30, nullable = false)
+    @Column
     private String estado;
 
     //    complemento VARCHAR(30),
-    @Column(length = 30)
-    private String complemento; // pode ser null
+    @Column
+    private String complemento; //  pode ser null
 
 
 }
