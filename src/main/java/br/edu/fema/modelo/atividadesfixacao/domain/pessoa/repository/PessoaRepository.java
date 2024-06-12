@@ -15,4 +15,6 @@ public interface PessoaRepository extends JpaRepository<Pessoa, UUID> {
 
     Optional<Pessoa> findByData (String dataConfirmacao);
 
+    List<Pessoa> findAllPessoas();
+
 }
